@@ -36,3 +36,8 @@ footer {
     margin-top: 20px;
     padding: 10px;
 }
+
+#anime {
+    display: inline;
+    position: absolute;
+}
