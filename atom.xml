@@ -6,7 +6,7 @@
   <link href="http://mini.moonlab.top/atom.xml" rel="self"/>
   
   <link href="http://mini.moonlab.top/"/>
-  <updated>2023-12-24T04:59:42.662Z</updated>
+  <updated>2023-12-24T06:06:54.488Z</updated>
   <id>http://mini.moonlab.top/</id>
   
   <author>
@@ -21,15 +21,26 @@
     <link href="http://mini.moonlab.top/post/20231224-14/"/>
     <id>http://mini.moonlab.top/post/20231224-14/</id>
     <published>2023-12-24T02:41:14.000Z</published>
-    <updated>2023-12-24T04:59:42.662Z</updated>
+    <updated>2023-12-24T06:06:54.488Z</updated>
+    
+    <content type="html"><![CDATA[<p>Rule34 Preview:</p><p><img src="https://counter.moonlab.top/counter/img?id=moon-counter"></p><p>Project repo: <a href="https://github.com/HelloLingC?tab=repositories">moon-counter (github.com)</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Rule34 Preview:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://counter.moonlab.top/counter/img?id=moon-counter&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Project repo: &lt;a href=&quot;https://github.c</summary>
+      
     
     
     
-    
-    <category term="Uncategoried" scheme="http://mini.moonlab.top/categories/Uncategoried/"/>
+    <category term="Programming" scheme="http://mini.moonlab.top/categories/Programming/"/>
     
     
     <category term="blog" scheme="http://mini.moonlab.top/tags/blog/"/>
+    
+    <category term="myproject" scheme="http://mini.moonlab.top/tags/myproject/"/>
     
   </entry>
   
