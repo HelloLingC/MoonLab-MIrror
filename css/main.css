@@ -20,6 +20,10 @@ article {
     margin-bottom: 40px;
 }
 
+.recent-post-item a {
+    line-height: 1.2rem;
+}
+
 h2 {
 }
 
