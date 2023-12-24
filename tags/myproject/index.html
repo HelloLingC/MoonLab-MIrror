@@ -14,16 +14,15 @@
                         MoonLab Mini
         </title>
         
-                <link rel="stylesheet" href="/css/main.css">
-    <link rel="">
+
+    <link rel="stylesheet" href="/css/main.css">
 <meta name="generator" content="Hexo 7.0.0"></head>
 
 <body>
     <header>
         <h1>🌒MoonLab Mini
         </h1>
-        <p>
-        <pre id="myCat">/ᐠ .ᆺ. ᐟ\ﾉ </pre>
+        <p>/ᐠ .ᆺ. ᐟ\ﾉ </p>
         </p>
         <p>MoonLab Mini is the backside of <a target="_blank" rel="noopener" href="https://moonlab.top">MoonLab</a>. I publish Eng-only contents here.
         </p>
@@ -31,9 +30,7 @@
             <a href="/reading">Reading</a> | <a href="/links">Links</a>
         </nav>
         <div style="margin-top: 1.3rem;"><a target="_blank" rel="noopener" href="https://moonlab.top/search.html">Search in MoonLab</a></div>
-        <p>
-        <pre id="anime"></pre>
-        </p>
+        <p id="anime"></p>
     </header>
     <main>
         
@@ -76,7 +73,6 @@
         <p>&copy; 2023 MonLab Mini provided by LingC.</p>
         <p>Under the CC BY-NC 4.0 Lisence.</p>
     </footer>
-    <script src="https://moonlab.top/js/highlight-9.13.1.min.js"></script>
 
     <script>
         const a = "_(:з」∠)_";
@@ -85,13 +81,13 @@
         const ele = document.getElementById('anime');
         var pos;
         function l(v) {
-            if(!pos) pos = ele.offsetLeft;
-            pos +=v;
+            if (!pos) pos = ele.offsetLeft;
+            pos += v;
             ele.style.left = `${pos}px`;
         }
         function r(v) {
-            if(!pos) pos = ele.offsetLeft;
-            pos -=v;
+            if (!pos) pos = ele.offsetLeft;
+            pos -= v;
             ele.style.left = `${pos}px`;
         }
         function iLoveAnime() {
@@ -99,7 +95,7 @@
             if (rand == 0) {
                 ele.innerText = a;
                 r(13);
-            } else if(rand > 1) {
+            } else if (rand > 1) {
                 ele.innerText = c;
                 l(13);
             } else {

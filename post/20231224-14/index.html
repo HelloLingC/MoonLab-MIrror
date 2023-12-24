@@ -9,21 +9,20 @@
     
         <title>
             
-                Powerful Website Visitor Counter |
+                Fast &amp; Powerful Website Visitor Counter |
                     
                         MoonLab Mini
         </title>
         
-                <link rel="stylesheet" href="/css/main.css">
-    <link rel="">
+
+    <link rel="stylesheet" href="/css/main.css">
 <meta name="generator" content="Hexo 7.0.0"></head>
 
 <body>
     <header>
         <h1>🌒MoonLab Mini
         </h1>
-        <p>
-        <pre id="myCat">/ᐠ .ᆺ. ᐟ\ﾉ </pre>
+        <p>/ᐠ .ᆺ. ᐟ\ﾉ </p>
         </p>
         <p>MoonLab Mini is the backside of <a target="_blank" rel="noopener" href="https://moonlab.top">MoonLab</a>. I publish Eng-only contents here.
         </p>
@@ -31,14 +30,12 @@
             <a href="/reading">Reading</a> | <a href="/links">Links</a>
         </nav>
         <div style="margin-top: 1.3rem;"><a target="_blank" rel="noopener" href="https://moonlab.top/search.html">Search in MoonLab</a></div>
-        <p>
-        <pre id="anime"></pre>
-        </p>
+        <p id="anime"></p>
     </header>
     <main>
         <div data-pagefind-body>
     <h1>
-        Powerful Website Visitor Counter
+        Fast &amp; Powerful Website Visitor Counter
     </h1>
     <div data-pagefind-ignore>
         <p>Category:
@@ -68,11 +65,32 @@
             December 24, 2023
         </time>
     </div>
-    <div><h2 id="Rule34-Preview"><a href="#Rule34-Preview" class="headerlink" title="Rule34 Preview:"></a>Rule34 Preview:</h2><p><img src="https://counter.moonlab.top/counter/img?id=moon-counter"></p>
+    <div><h2 id="Moon-Counter"><a href="#Moon-Counter" class="headerlink" title="Moon Counter"></a>Moon Counter</h2><p>A fast, simple &amp; easy-to-use webpage visitor counter, but not only limited to websites.</p>
+<h2 id="Rule34-Theme-Preview"><a href="#Rule34-Theme-Preview" class="headerlink" title="Rule34 Theme Preview:"></a>Rule34 Theme Preview:</h2><p><img src="https://raw.githubusercontent.com/HelloLingC/moon-counter/main/assets/rule34.svg" alt="Moon-Counter"></p>
+<h2 id="This-Page-Views"><a href="#This-Page-Views" class="headerlink" title="This Page Views"></a>This Page Views</h2><p><img src="https://counter.moonlab.top/counter/img?id=moon-counter"></p>
 <h2 id="Project-repo"><a href="#Project-repo" class="headerlink" title="Project repo"></a>Project repo</h2><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/HelloLingC/moon-counter">HelloLingC&#x2F;moon-counter: A fast, simple &amp; powerful website visitor counter written with Golang (github.com)</a></p>
 <h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><p>You can use <code>-c</code> to spesify a config file, eg: <code>moon-counter -c custom.yml</code><br>By default, the configuration file is name as  <code>config.yaml</code>, which is located in the root directory of the program during runtime.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">host:</span> <span class="string">counter.moonlab.top</span></span><br><span class="line"><span class="attr">listen:</span> <span class="number">3800</span></span><br><span class="line"><span class="attr">img_theme:</span> <span class="string">rule34</span></span><br><span class="line"><span class="attr">cors:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">hostnames:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">moonlab.top</span></span><br><span class="line"></span><br><span class="line"><span class="attr">error_log:</span> <span class="string">error.log</span></span><br><span class="line"></span><br><span class="line"><span class="attr">db:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">sqlite</span></span><br><span class="line">  <span class="attr">dbname:</span> <span class="string">moon.db</span></span><br><span class="line">  <span class="attr">host:</span></span><br><span class="line">  <span class="attr">username:</span></span><br><span class="line">  <span class="attr">password:</span></span><br><span class="line">  </span><br><span class="line"><span class="attr">admin:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">/admin</span></span><br><span class="line">  <span class="attr">password:</span></span><br></pre></td></tr></table></figure>
+<pre><code class="yaml">host: counter.moonlab.top
+listen: 3800
+img_theme: rule34
+cors: true
+hostnames:
+  - moonlab.top
 
+error_log: error.log
+
+db:
+  type: sqlite
+  dbname: moon.db
+  host:
+  username:
+  password:
+  
+admin:
+  enable: false
+  path: /admin
+  password:
+</code></pre>
 <p><strong>host</strong> - The counter server’s domain. If you don’t have a domain for your server, replace here with your external IP and server listening port. eg: <code>201.25.21.3:3800</code><br><strong>listen</strong> - The server listening port. It’s better to use with reverse proxy.<br><strong>img_theme</strong> - The theme name for image mode. You can add your own theme under the assets folder. And modify this variable with your theme folder name.<br><strong>cors</strong> - CORS mode for security. Once enabled, others cannot use your counter server to tally views for their websites without your permission. And thus, <code>hostnames</code> is required. For more details about CORS, see <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) - HTTP | MDN (mozilla.org)</a><br><strong>hostnames</strong> - </p>
 </div>
 </div>
@@ -82,7 +100,6 @@
         <p>&copy; 2023 MonLab Mini provided by LingC.</p>
         <p>Under the CC BY-NC 4.0 Lisence.</p>
     </footer>
-    <script src="https://moonlab.top/js/highlight-9.13.1.min.js"></script>
 
     <script>
         const a = "_(:з」∠)_";
@@ -91,13 +108,13 @@
         const ele = document.getElementById('anime');
         var pos;
         function l(v) {
-            if(!pos) pos = ele.offsetLeft;
-            pos +=v;
+            if (!pos) pos = ele.offsetLeft;
+            pos += v;
             ele.style.left = `${pos}px`;
         }
         function r(v) {
-            if(!pos) pos = ele.offsetLeft;
-            pos -=v;
+            if (!pos) pos = ele.offsetLeft;
+            pos -= v;
             ele.style.left = `${pos}px`;
         }
         function iLoveAnime() {
@@ -105,7 +122,7 @@
             if (rand == 0) {
                 ele.innerText = a;
                 r(13);
-            } else if(rand > 1) {
+            } else if (rand > 1) {
                 ele.innerText = c;
                 l(13);
             } else {
