@@ -74,6 +74,21 @@
 <h2 id="Moebooru-Preview"><a href="#Moebooru-Preview" class="headerlink" title="Moebooru Preview"></a>Moebooru Preview</h2><p><img src="/post/20231224-14/moebooru.svg" alt="moobooru"></p>
 <h2 id="This-Page-Views"><a href="#This-Page-Views" class="headerlink" title="This Page Views"></a>This Page Views</h2><p><img src="https://counter.moonlab.top/counter/img?id=moon-counter"></p>
 <h2 id="Project-repo"><a href="#Project-repo" class="headerlink" title="Project repo"></a>Project repo</h2><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/HelloLingC/moon-counter">HelloLingC&#x2F;moon-counter: A fast, simple &amp; powerful website visitor counter written with Golang (github.com)</a></p>
+<h1 id="Public-Counter"><a href="#Public-Counter" class="headerlink" title="Public Counter"></a>Public Counter</h1><p>You can use my MoonCounter instance as you want. But I don’t have responsibility for its stablility. In fact, no one does. But as long as this website continues, the counter service is always public.<br>But i still recommand you self-host your owned service.</p>
+<p><strong>Ofc, the use of my service is prohibited for illegal websites.</strong></p>
+<h2 id="Image-Counter"><a href="#Image-Counter" class="headerlink" title="Image Counter"></a>Image Counter</h2><p><strong>Replace the UniqueID parameter with the webpage’s url. At least it must be unique to identify your page.</strong></p>
+<pre><code>![](https:///counter.moonlab.top/counter/img?id=UniqueID)
+
+&lt;img src=&quot;//counter.moonlab.top/counter/img?id=UniqueID&quot;&gt;&lt;/img&gt;
+</code></pre>
+<p>If you don’t wanna handle UniqueID by yourself, you can use this. It will automatically handle the id param. You can just directly put it on your webpage to count.</p>
+<pre><code>&lt;script src=&quot;//counter.moonlab.top/moon-counter/js/img&quot;&gt;&lt;/script&gt;
+&lt;img id=&quot;moon-counter-img&quot;&gt;&lt;/img&gt;
+</code></pre>
+<h2 id="Text-Counter"><a href="#Text-Counter" class="headerlink" title="Text Counter"></a>Text Counter</h2><p>And this will only output plain count text. You also don’t need to handle the uniqueid parameter by yourself.</p>
+<pre><code>&lt;script src=&quot;//counter.moonlab.top/moon-counter/js&quot;&gt;&lt;/script&gt;
+&lt;span id=&quot;moon-counter&quot;&gt;&lt;/span&gt;
+</code></pre>
 <h1 id="Self-Host"><a href="#Self-Host" class="headerlink" title="Self Host"></a>Self Host</h1><p>Download the release file. Replace the following verison  <code>v0.0.1</code> with the latest version. You can get it from <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/HelloLingC/moon-counter/releases">Github Release</a></p>
 <pre><code>wget https://github.com/HelloLingC/moon-counter/releases/download/v0.0.1/moon-counter-v0.0.1-linux-amd64.tar.gz
 </code></pre>
@@ -119,11 +134,11 @@ admin:
   path: /admin
   password:
 </code></pre>
-<p><strong>host</strong> - The counter server’s domain. If you don’t have a domain for your server, replace this with your external IP and server listening port. eg: <code>201.25.21.3:3800</code><br><strong>listen</strong> - The server listening port. It’s better to use with reverse proxy.<br><strong>img_theme</strong> - The theme name for image mode. You can add your own theme under the assets folder. And modify this variable with your theme folder name.<br><strong>cors</strong> - CORS mode for security. Once enabled, others cannot use your counter server to tally views for their websites without your permission. And thus, <code>hostnames</code> is required. For more details about CORS, see <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) - HTTP | MDN (mozilla.org)</a><br><strong>hostnames</strong> - only when cors is enabled. A array of allowed hostnames.<br><strong>error_log</strong> - currently not available</p>
+<p><strong>host</strong> - The counter server’s domain. If you don’t have a domain for your server, replace this with your external IP and server listening port. eg: <code>201.25.21.3:3800</code><br><strong>listen</strong> - The server listening port. It’s always better to use with reverse proxy.<br><strong>img_theme</strong> - The theme name for image mode. You can add your own theme under the assets folder. And modify this variable with your theme folder name.<br><strong>cors</strong> - CORS mode for security. Once enabled, others cannot use your counter server to tally views for their websites without your permission. And thus, <code>hostnames</code> is required. For more details about CORS, see <a target="_blank" rel="noopener external nofollow noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">Cross-Origin Resource Sharing (CORS) - HTTP | MDN (mozilla.org)</a>.<br><strong>hostnames</strong> - Only when cors is enabled. A array of allowed hostnames.<br><strong>error_log</strong> - currently not available</p>
 <p><strong>db</strong><br><strong>type</strong> - currently only support sqlite<br><strong>dbname</strong> - For SQLite,  dbname is the filename.</p>
-<p><strong>admin</strong><br>currently not available</p>
+<p><strong>admin</strong><br><strong>enable</strong> - Enable admin panel or not. If admin panel is not enabled, the admin panel will disguise as 404 error page.<br><strong>path</strong> - The path to the admin panel. You must set a random string for it, instead of <code>/admin</code>.<br><strong>passphrase</strong> - You should use a generator to generate a random string, either passphrase or password. For passphrase generating, try <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.useapassphrase.com/">Use a Passphrase</a>.</p>
 <h1 id="Philosophy"><a href="#Philosophy" class="headerlink" title="Philosophy"></a>Philosophy</h1><p><strong>Only Do One Thing For the Best</strong></p>
-<p>Moon Couner is only for pageview counting.<br>Your website will create a history and precious memories for you, and for this, A pageview counter is needed here to store it forever.</p>
+<p>Moon Couner is only for pageview counting.<br>Your website will create a history and precious memories for you, and for this, A pageview counter is the best way to store it forever.</p>
 <p>If you’re looking for website analytics service, I recommand you <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.goatcounter.com/">GoatCounter – open source web analytics</a></p>
 <h1 id="Credits"><a href="#Credits" class="headerlink" title="Credits"></a>Credits</h1><p>The resources (images) used in MoonCounter are not owned by me. All the resources belong to their respective owners. I do <strong>NOT</strong> claim any ownership. <strong>USE AT YOUR OWN RISK</strong>.</p>
 <blockquote>
