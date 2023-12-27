@@ -14,9 +14,6 @@
                         MoonLab Mini
         </title>
         
-    <meta name="description" content="Echo from the backside of the moon.">
-    <meta name="keywords" content="MoonLab, MoonLab Mini, Blog">
-    <meta name="author" content="LingC">
     <link rel="stylesheet" href="/css/main.css">
 <meta name="generator" content="Hexo 7.0.0"></head>
 
@@ -69,11 +66,13 @@
     </div>
     <div><h2 id="Moon-Counter"><a href="#Moon-Counter" class="headerlink" title="Moon Counter"></a>Moon Counter</h2><p>A fast, simple &amp; easy-to-use webpage visitor counter, but not only limited to websites.</p>
 <p>🔒 CORS support</p>
+<p>With a visual admin panel</p>
 <p>text &amp; image output</p>
 <h2 id="Rule34-Theme-Preview"><a href="#Rule34-Theme-Preview" class="headerlink" title="Rule34 Theme Preview:"></a>Rule34 Theme Preview:</h2><p><img src="/post/20231224-14/rule34.svg" alt="rule34"></p>
 <h2 id="Moebooru-Preview"><a href="#Moebooru-Preview" class="headerlink" title="Moebooru Preview"></a>Moebooru Preview</h2><p><img src="/post/20231224-14/moebooru.svg" alt="moobooru"></p>
 <h2 id="This-Page-Views"><a href="#This-Page-Views" class="headerlink" title="This Page Views"></a>This Page Views</h2><p><img src="https://counter.moonlab.top/counter/img?id=moon-counter"></p>
 <h2 id="Project-repo"><a href="#Project-repo" class="headerlink" title="Project repo"></a>Project repo</h2><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/HelloLingC/moon-counter">HelloLingC&#x2F;moon-counter: A fast, simple &amp; powerful website visitor counter written with Golang (github.com)</a></p>
+<h2 id="Admin-panel"><a href="#Admin-panel" class="headerlink" title="Admin panel"></a>Admin panel</h2><p>Preview at <a target="_blank" rel="noopener external nofollow noreferrer" href="https://counter.moonlab.top/admin">https://counter.moonlab.top/admin</a>. The password is 123456.</p>
 <h1 id="Public-Counter"><a href="#Public-Counter" class="headerlink" title="Public Counter"></a>Public Counter</h1><p>You can use my MoonCounter instance as you want. But I don’t have responsibility for its stablility. In fact, no one does. But as long as this website continues, the counter service is always public.<br>But i still recommand you self-host your owned service.</p>
 <p><strong>Ofc, the use of my service is prohibited for illegal websites.</strong></p>
 <h2 id="Image-Counter"><a href="#Image-Counter" class="headerlink" title="Image Counter"></a>Image Counter</h2><p><strong>Replace the UniqueID parameter with the webpage’s url. At least it must be unique to identify your page.</strong></p>
@@ -81,10 +80,11 @@
 
 &lt;img src=&quot;//counter.moonlab.top/counter/img?id=UniqueID&quot;&gt;&lt;/img&gt;
 </code></pre>
-<p>If you don’t wanna handle UniqueID by yourself, you can use this. It will automatically handle the id param. You can just directly put it on your webpage to count.</p>
+<p>If you don’t wanna handle UniqueID by yourself, you can use this.</p>
 <pre><code>&lt;script src=&quot;//counter.moonlab.top/moon-counter/js/img&quot;&gt;&lt;/script&gt;
 &lt;img id=&quot;moon-counter-img&quot;&gt;&lt;/img&gt;
 </code></pre>
+<p> It will automatically handle the id param. You can just directly put it on your webpage to count.</p>
 <h2 id="Text-Counter"><a href="#Text-Counter" class="headerlink" title="Text Counter"></a>Text Counter</h2><p>And this will only output plain count text. You also don’t need to handle the uniqueid parameter by yourself.</p>
 <pre><code>&lt;script src=&quot;//counter.moonlab.top/moon-counter/js&quot;&gt;&lt;/script&gt;
 &lt;span id=&quot;moon-counter&quot;&gt;&lt;/span&gt;
@@ -99,8 +99,16 @@
 <pre><code>vi config.yaml
 </code></pre>
 <p>Configure daemon process. This is a service template for systemd</p>
-<pre><code>[Unit] Description=Moon Counter
-[Service] ExecStart=/opt/moon-counter/moon-counter
+<pre><code>[Unit]
+Description=Moon Counter service
+Wants=network.target
+After=network.target network.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/counter
+ExecStart=/opt/counter/moon-counter
+KillMode=process
 </code></pre>
 <p>Configure reverse proxy. This is a template for nginx</p>
 <pre><code>server &#123;
